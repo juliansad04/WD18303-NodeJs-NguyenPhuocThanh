@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <h2>Add New Product</h2>
+    <form>
+        <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" id="productName" placeholder="Enter product name">
+        </div>
+        <div class="form-group">
+            <label for="productPrice">Price</label>
+            <input type="number" class="form-control" id="productPrice" placeholder="Enter price">
+        </div>
+        <div class="form-group">
+            <label for="shortDescription">Short Description</label>
+            <textarea class="form-control" id="shortDescription" rows="3"
+                placeholder="Enter short description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="longDescription">Long Description</label>
+            <textarea class="form-control" id="longDescription" rows="5"
+                placeholder="Enter long description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="category">Choose</label>
+                </div>
+                <select class="custom-select" id="category">
+                    <option selected>Select category</option>
+                    <% categories.forEach(category=> { %>
+                        <option value="<%= category.id %>">
+                            <%= category.name %>
+                        </option>
+                        <% }); %>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="imageURL">Image URL</label>
+            <input type="text" class="form-control" id="imageURL" placeholder="Enter image URL">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
